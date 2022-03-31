@@ -1,6 +1,8 @@
 ﻿using CursoFundamentosOOP_Solid;
 using CursoFundamentosOOP_Solid.Métodos_de_Extensão;
 using CursoFundamentosOOP_Solid.Métodos_Estáticos;
+using CursoFundamentosOOP_Solid.Princípio_OCP;
+using CursoFundamentosOOP_Solid.Princípio_OCP.Extensions;
 
 #region Encapsulamento e Modelo de Domínio
 
@@ -33,13 +35,29 @@ static ClienteAnemico ClienteAnemicoTeste()
 
 #region Métodos de Extensão
 
-var texto1 = "curso";
-var texto2 = "madalena";
+//var texto1 = "curso";
+//var texto2 = "madalena";
 
-texto1 = texto1.CaixaAltaPrimeiraLetra();
-texto2 = texto2.CaixaAltaPrimeiraLetra();
-Console.WriteLine(texto1);
-Console.WriteLine(texto2);
+//texto1 = texto1.CaixaAltaPrimeiraLetra();
+//texto2 = texto2.CaixaAltaPrimeiraLetra();
+//Console.WriteLine(texto1);
+//Console.WriteLine(texto2);
+
+#endregion
+
+#region Princípio OCP
+
+Produto produto1 = new Produto(
+              1,
+              "Caneta",
+              "Caneta Esferográfica azul",
+              2.00M,
+              3.40M,
+              100,
+              true
+              );
+
+Console.WriteLine($"Produto = {produto1.Nome} Lucro = {produto1.MargemLucro()}");
 
 #endregion
 
